@@ -27,8 +27,46 @@ public class Programa {
 		System.out.println("Tem mais 0 e menos de 99.999 " + noItervalo(nomes, 0, 99999).size());
 		System.out.println("Frequencia Impar " + frequenciaImpar(nomes).size());
 		System.out.println("Frequencia Par " + frequenciaPar(nomes).size());
-		System.out.println("Total " + nomes.size());
-		System.out.println("Contem Maria " + subString(nomes, "ana"));
+
+		System.out.println("ANTES Total " + nomes.size());
+		nomes.remove(new Nome("MARIA",0));
+		System.out.println("DEPOIS Total " + nomes.size());
+		
+		System.out.println("Contem MARIA " + subString(nomes, "maria"));
+		
+		System.out.println("Contem ANA " + subString(nomes, "ana"));
+
+		/*
+		System.out.println("\n\n\nEQUALS\n");
+		
+		Nome mario1=new Nome("Mario",1);
+		Nome mario2=new Nome("Mario",1000);
+		
+		
+		System.out.println("Comparando com  == ");
+		if (mario1==mario2) {
+			System.out.println("IGUAL");
+		}
+		else {
+			System.out.println("DIFERENTE");
+		}
+		System.out.println("Comparando com  equals ");		
+		if (mario1.equals(mario2)) {
+			System.out.println("IGUAL");
+		}
+		else {
+			System.out.println("DIFERENTE");
+		}
+		System.out.println("Comparando com  atributo a atributo ");		
+		if (mario1.getNome().equals(mario2.getNome()) && mario1.getFrequencia()==mario2.getFrequencia()) {
+			System.out.println("IGUAL");
+		}
+		else {
+			System.out.println("DIFERENTE");
+		}
+		
+		*/
+		
 
 	}
 
@@ -216,7 +254,7 @@ public class Programa {
 				new Nome("GISELE", 165343), new Nome("JONAS", 165105), new Nome("MARILENE", 164393),
 				new Nome("KATIA", 163681), new Nome("EVA", 161039), new Nome("GILMAR", 160511),
 				new Nome("JEAN", 160076), new Nome("FABIANO", 159150) };
-		return Arrays.asList(nomes);
+		return new ArrayList<>(Arrays.asList(nomes));
 	}
 
 }
